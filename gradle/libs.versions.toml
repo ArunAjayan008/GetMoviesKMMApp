@@ -1,0 +1,48 @@
+[versions]
+agp = "8.4.0-alpha12"
+kotlin = "2.0.0"
+compose = "1.6.7"
+compose-compiler = "1.5.13"
+compose-material3 = "1.2.1"
+androidx-activityCompose = "1.9.0"
+coroutine-version = "1.8.1"
+ktor-version = "2.3.10"
+koin-version = "3.5.3"
+koin-compose-version = "3.5.3"
+coil-version = "2.6.0"
+nav-version = "2.7.7"
+gson = "2.10.1"
+viewmodel = "1.0.0-BETA-3"
+kmpNativeCoroutines = "1.0.0-ALPHA-31"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine-version" }
+ktor-client = { module = "io.ktor:ktor-client-core", version.ref = "ktor-version" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor-version" }
+ktor-content = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-version" }
+ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor-version" }
+koin = { module = "io.insert-koin:koin-core", version.ref = "koin-version" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-version" }
+ktor-ios = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor-version" }
+koin-insert = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-compose-version" }
+coil-version = { module = "io.coil-kt:coil-compose", version.ref = "coil-version" }
+navigation-version = { module = "androidx.navigation:navigation-compose", version.ref = "nav-version" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+rickclephas-viewmodel = { module = "com.rickclephas.kmp:kmp-observableviewmodel-core", version.ref = "viewmodel" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kmpNativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmpNativeCoroutines" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
