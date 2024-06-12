@@ -3,17 +3,12 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.kmpNativeCoroutines)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
-        }
-    }
-    
+    androidTarget()
+    jvmToolchain(11)
     listOf(
         iosX64(),
         iosArm64(),
@@ -35,7 +30,7 @@ kotlin {
             api(libs.rickclephas.viewmodel)
         }
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
+//            implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
@@ -45,8 +40,10 @@ kotlin {
             implementation(libs.ktor.ios)
         }
         all {
-            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
-            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+            languageSettings {
+                optIn("kotlin.experimental.ExperimentalObjCName")
+                optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            }
         }
     }
 }
@@ -57,8 +54,8 @@ android {
     defaultConfig {
         minSdk = 24
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
 }

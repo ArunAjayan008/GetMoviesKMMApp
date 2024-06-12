@@ -4,8 +4,11 @@ import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import com.rickclephas.kmp.observableviewmodel.MutableStateFlow
 import com.rickclephas.kmp.observableviewmodel.ViewModel
 import com.rickclephas.kmp.observableviewmodel.coroutineScope
+import com.rickclephas.kmp.observableviewmodel.stateIn
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.arunajayan.getmovies.domain.model.Movie
@@ -22,7 +25,7 @@ open class HomeViewModel : ViewModel(), KoinComponent {
     private val _uiState = MutableStateFlow(viewModelScope, HomeScreenState())
 
     @NativeCoroutinesState
-    val uiState: StateFlow<HomeScreenState> = _uiState.asStateFlow()
+    val uiState = _uiState.asStateFlow()
 
     init {
         loadMovies(forceReload = false)

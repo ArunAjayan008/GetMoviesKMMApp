@@ -12,7 +12,7 @@ import me.arunajayan.getmovies.domain.usecase.GetMoviesUseCase
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-open class TestViewmodel:ViewModel(),KoinComponent {
+class TestViewmodel:ViewModel(), KoinComponent {
     private val getMoviesUseCase: GetMoviesUseCase by inject()
 
     @NativeCoroutinesState

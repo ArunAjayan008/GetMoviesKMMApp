@@ -10,15 +10,6 @@ import SwiftUI
 import shared
 
 
-// A sample movie instance for previews
-let sampleMovie: [Movie] = [
-    Movie(id: 1, title: "Inception", description: "2010", imageUrl: "inception.jpg", releaseDate: "12121"),
-    Movie(id: 2, title: "The Dark Knight", description: "2008", imageUrl: "dark_knight.jpg", releaseDate: "12122"),
-    Movie(id: 3, title: "Interstellar", description: "2014", imageUrl: "interstellar.jpg", releaseDate: "12123"),
-    Movie(id: 4, title: "Dunkirk", description: "2017", imageUrl: "dunkirk.jpg", releaseDate: "12124")
-    // Add more movies as needed
-]
-
 struct MovieGridItem: View {
     let movie: Movie
     
